@@ -46,187 +46,195 @@
             android:verticalScrollbarPosition="defaultPosition"
             app:layout_constraintTop_toBottomOf="@+id/TopBarrier">
 
-            <RelativeLayout
-                android:id="@+id/VitalContainer"
-                android:layout_width="405dp"
-                android:layout_height="298dp"
+            <LinearLayout
+                android:id="@+id/TopContainer"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
                 android:isScrollContainer="true"
                 android:orientation="horizontal"
                 android:scrollbars="vertical"
-                android:verticalScrollbarPosition="left"
+                android:gravity="right"
+                android:verticalScrollbarPosition="defaultPosition"
                 app:layout_constraintTop_toBottomOf="@+id/TopBarrier">
 
                 <TextView
-                    android:id="@+id/VitalsDisplayTitle"
-                    android:layout_width="141dp"
-                    android:layout_height="28dp"
+                    android:id="@+id/GreetUserTitle"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="Vitals Dashboard"
-                    android:textSize="16sp"
+                    android:text="@string/greeting"
+                    android:textSize="48sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/BodyTempVital"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@id/VitalsDisplayTitle"
-                    android:layout_alignParentLeft="true"
-                    android:src="@mipmap/bodytemp" />
+                    android:id="@+id/UserImage"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/sarah" />
+            </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/HeartRateVital"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_below="@id/VitalsDisplayTitle"
-                    android:layout_alignParentRight="true"
-                    android:layout_toLeftOf="@+id/BodyTempVital"
-                    android:src="@mipmap/heartrate" />
+                <RelativeLayout
+                    android:id="@+id/VitalContainer"
+                    android:layout_width="405dp"
+                    android:layout_height="298dp"
+                    android:isScrollContainer="true"
+                    android:orientation="horizontal"
+                    android:scrollbars="vertical"
+                    android:verticalScrollbarPosition="left"
+                    app:layout_constraintTop_toBottomOf="@+id/TopBarrier">
 
-                <ImageView
-                    android:id="@+id/OxygenLevelVital"
-                    android:layout_width="126dp"
-                    android:layout_height="166dp"
-                    android:layout_below="@id/BodyTempVital"
-                    android:layout_alignParentLeft="true"
-                    android:src="@mipmap/oxygenlevel"
-                    app:layout_constraintVertical_bias="1.0" />
-
-                <ImageView
-                    android:id="@+id/PusleVital"
-                    android:layout_width="134dp"
-                    android:layout_height="170dp"
-                    android:layout_below="@id/HeartRateVital"
-                    android:layout_alignParentRight="true"
-                    android:layout_toLeftOf="@+id/OxygenLevelVital"
-                    android:src="@mipmap/pulse"
-                    android:visibility="visible"
-                    tools:visibility="visible" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/CarouselContainer"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:isScrollContainer="true"
-                android:orientation="vertical"
-                android:scrollbars="vertical"
-                android:verticalScrollbarPosition="left"
-                app:layout_constraintTop_toBottomOf="@id/VitalContainer">
-
-                <TextView
-                    android:id="@+id/RecommendedForYouTitle"
-                    android:layout_width="167dp"
-                    android:layout_height="27dp"
-                    android:fontFamily="sans-serif-condensed"
-                    android:text=" Recommended for you"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/RecommendedHorizontalScroll" />
-
-                <HorizontalScrollView
-                    android:id="@+id/RecommendedHorizontalScroll"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="RecommendedSongs"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:layout_editor_absoluteX="16dp">
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/VitalsDisplayTitle"
                         android:layout_width="200dp"
-                        android:layout_height="200dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
+                        android:layout_height="28dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Vitals Dashboard"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/RecommendedScrollImage1"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay1" />
+                    <ImageView
+                        android:id="@+id/BodyTempVital"
+                        android:layout_width="379dp"
+                        android:layout_height="235dp"
+                        android:layout_below="@id/VitalsDisplayTitle"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="26dp"
+                        android:src="@mipmap/allvitals" />
 
-                        <ImageView
-                            android:id="@+id/RecommendedScrollImage2"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay2" />
+                </RelativeLayout>
 
-                        <ImageView
-                            android:id="@+id/RecommendedScrollImage3"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay3" />
-
-                        <ImageView
-                            android:id="@+id/RecommendedScrollImage4"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay4" />
-
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-
-                <TextView
-                    android:id="@+id/WhatsYourMoodTitle"
-                    android:layout_width="167dp"
-                    android:layout_height="27dp"
-                    android:fontFamily="sans-serif-condensed"
-                    android:text="Whats your mood?"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/RecommendedHorizontalScroll" />
-
-                <HorizontalScrollView
-                    android:id="@+id/WhatsYourMoodHorizontalScroll"
+                <LinearLayout
+                    android:id="@+id/CarouselContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:contentDescription="RecommendedSongs"
-                    app:layout_constraintTop_toBottomOf="@id/WhatsYourMoodTitle">
+                    android:layout_height="500dp"
+                    android:isScrollContainer="true"
+                    android:orientation="vertical"
+                    android:scrollbars="vertical"
+                    android:verticalScrollbarPosition="left"
+                    app:layout_constraintTop_toBottomOf="@id/VitalContainer">
 
-                    <LinearLayout
-                        android:layout_width="200dp"
+                    <TextView
+                        android:id="@+id/RecommendedForYouTitle"
+                        android:layout_width="250dp"
+                        android:layout_height="27dp"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="sans-serif"
+                        android:text=" Recommended for you"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/RecommendedHorizontalScroll" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/RecommendedHorizontalScroll"
+                        android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:layout_marginTop="20dp"
-                        android:orientation="horizontal">
+                        android:contentDescription="RecommendedSongs"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="16dp">
 
-
-                        <ImageView
-                            android:id="@+id/MoodScrollImage1"
+                        <LinearLayout
                             android:layout_width="200dp"
                             android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay1" />
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/MoodScrollImage2"
+                            <ImageView
+                                android:id="@+id/RecommendedScrollImage1"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/calm2" />
+
+                            <ImageView
+                                android:id="@+id/RecommendedScrollImage2"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature2" />
+
+                            <ImageView
+                                android:id="@+id/RecommendedScrollImage3"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature3" />
+
+                            <ImageView
+                                android:id="@+id/RecommendedScrollImage4"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature1" />
+
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/WhatsYourMoodTitle"
+                        android:layout_width="200dp"
+                        android:layout_height="27dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Whats your mood?"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/RecommendedHorizontalScroll" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/WhatsYourMoodHorizontalScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:contentDescription="RecommendedSongs"
+                        app:layout_constraintTop_toBottomOf="@id/WhatsYourMoodTitle">
+
+                        <LinearLayout
                             android:layout_width="200dp"
                             android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay2" />
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/MoodScrollImage3"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay3" />
 
-                        <ImageView
-                            android:id="@+id/MoodScrollImage4"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/coldplay4" />
+                            <ImageView
+                                android:id="@+id/MoodScrollImage1"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature5" />
 
-                    </LinearLayout>
-                </HorizontalScrollView>
+                            <ImageView
+                                android:id="@+id/MoodScrollImage2"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature6" />
+
+                            <ImageView
+                                android:id="@+id/MoodScrollImage3"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature7" />
+
+                            <ImageView
+                                android:id="@+id/MoodScrollImage4"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@mipmap/nature4" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
 
             </LinearLayout>
         </LinearLayout>

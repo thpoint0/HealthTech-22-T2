@@ -16,4 +16,5 @@
     <string name="song_title">Song Title</string>
     <string name="you">TODO</string>
     <string name="artist">Artist</string>
+    <string name="greeting">Hello Sarah!</string>
 </resources>
