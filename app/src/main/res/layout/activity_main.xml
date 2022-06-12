@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_host_fragment_activity_main"-->
+<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--        android:layout_width="409dp"-->
+<!--        android:layout_height="10dp"-->
+<!--        app:defaultNavHost="true"-->
+<!--        app:navGraph="@navigation/mobile_navigation"-->
+<!--        tools:layout_editor_absoluteX="631dp"-->
+<!--        tools:layout_editor_absoluteY="64dp" />-->
+
+    <!--    <com.aemerse.slider.ImageCarousel-->
+    <!--        android:id="@+id/carousel"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="250dp"-->
+    <!--        android:backgroundTintMode="add"-->
+    <!--        android:clickable="true"-->
+    <!--        android:clipChildren="true"-->
+    <!--        android:isScrollContainer="true"-->
+    <!--        android:keepScreenOn="true"-->
+    <!--        android:nestedScrollingEnabled="true"-->
+    <!--        android:scrollbars="horizontal"-->
+    <!--        android:splitMotionEvents="true"-->
+    <!--        app:autoWidthFixing="true"-->
+    <!--        app:carouselBackground="#3F51B5"-->
+    <!--        app:carouselGravity="START"-->
+    <!--        app:carouselPadding="10dp"-->
+    <!--        app:carouselPaddingBottom="10dp"-->
+    <!--        app:carouselPaddingEnd="5dp"-->
+    <!--        app:carouselPaddingStart="5dp"-->
+    <!--        app:carouselPaddingTop="5dp"-->
+    <!--        app:carouselType="BLOCK"-->
+    <!--        app:imageScaleType="fitCenter"-->
+    <!--        app:infiniteCarousel="false"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:scalingFactor="0.3"-->
+    <!--        app:showNavigationButtons="true" />-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/songLists"-->
+    <!--        android:layout_width="396dp"-->
+    <!--        android:layout_height="500dp"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:overScrollMode="always"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/TopBarrier"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        app:barrierDirection="top"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/HorizontalCarouselScroller"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:isScrollContainer="true"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="23dp">
+
+        <LinearLayout
+            android:id="@+id/MainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="defaultPosition"
+            app:layout_constraintTop_toBottomOf="@+id/TopBarrier">
+
+            <RelativeLayout
+                android:id="@+id/VitalContainer"
+                android:layout_width="405dp"
+                android:layout_height="298dp"
+                android:isScrollContainer="true"
+                android:orientation="horizontal"
+                android:scrollbars="vertical"
+                android:verticalScrollbarPosition="left"
+                app:layout_constraintTop_toBottomOf="@+id/TopBarrier">
+
+                <TextView
+                    android:id="@+id/VitalsDisplayTitle"
+                    android:layout_width="141dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Vitals Dashboard"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/BodyTempVital"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/VitalsDisplayTitle"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/bodytemp" />
+
+                <ImageView
+                    android:id="@+id/HeartRateVital"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/VitalsDisplayTitle"
+                    android:layout_alignParentRight="true"
+                    android:layout_toLeftOf="@+id/BodyTempVital"
+                    android:src="@mipmap/heartrate" />
+
+                <ImageView
+                    android:id="@+id/OxygenLevelVital"
+                    android:layout_width="126dp"
+                    android:layout_height="166dp"
+                    android:layout_below="@id/BodyTempVital"
+                    android:layout_alignParentLeft="true"
+                    android:src="@mipmap/oxygenlevel"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/PusleVital"
+                    android:layout_width="134dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/HeartRateVital"
+                    android:layout_alignParentRight="true"
+                    android:layout_toLeftOf="@+id/OxygenLevelVital"
+                    android:src="@mipmap/pulse"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/CarouselContainer"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:isScrollContainer="true"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                android:verticalScrollbarPosition="left"
+                app:layout_constraintTop_toBottomOf="@id/VitalContainer">
+
+                <TextView
+                    android:id="@+id/RecommendedForYouTitle"
+                    android:layout_width="167dp"
+                    android:layout_height="27dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text=" Recommended for you"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/RecommendedHorizontalScroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/RecommendedHorizontalScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:contentDescription="RecommendedSongs"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/RecommendedScrollImage1"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay1" />
+
+                        <ImageView
+                            android:id="@+id/RecommendedScrollImage2"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay2" />
+
+                        <ImageView
+                            android:id="@+id/RecommendedScrollImage3"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay3" />
+
+                        <ImageView
+                            android:id="@+id/RecommendedScrollImage4"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay4" />
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/WhatsYourMoodTitle"
+                    android:layout_width="167dp"
+                    android:layout_height="27dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Whats your mood?"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/RecommendedHorizontalScroll" />
+
+                <HorizontalScrollView
+                    android:id="@+id/WhatsYourMoodHorizontalScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:contentDescription="RecommendedSongs"
+                    app:layout_constraintTop_toBottomOf="@id/WhatsYourMoodTitle">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:id="@+id/MoodScrollImage1"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay1" />
+
+                        <ImageView
+                            android:id="@+id/MoodScrollImage2"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay2" />
+
+                        <ImageView
+                            android:id="@+id/MoodScrollImage3"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay3" />
+
+                        <ImageView
+                            android:id="@+id/MoodScrollImage4"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@mipmap/coldplay4" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
