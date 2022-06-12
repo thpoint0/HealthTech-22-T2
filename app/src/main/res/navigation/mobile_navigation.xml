@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_favorites"
         android:name="com.example.mhapp4.ui.favorites.FavoritesFragment"
-        android:label="@string/title_favorites"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_favorites" />
 
     <fragment
@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_rooms"
-        android:name="com.example.mhapp4.ui.trends.TrendsFragment"
-        android:label="@string/title_trends"
+        android:name="com.example.mhapp4.ui.rooms.RoomsFragment"
+        android:label="@string/title_rooms"
         tools:layout="@layout/fragment_rooms" />
 </navigation>

@@ -17,54 +17,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_host_fragment_activity_main"-->
-<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
-<!--        android:layout_width="409dp"-->
-<!--        android:layout_height="10dp"-->
-<!--        app:defaultNavHost="true"-->
-<!--        app:navGraph="@navigation/mobile_navigation"-->
-<!--        tools:layout_editor_absoluteX="631dp"-->
-<!--        tools:layout_editor_absoluteY="64dp" />-->
-
-    <!--    <com.aemerse.slider.ImageCarousel-->
-    <!--        android:id="@+id/carousel"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="250dp"-->
-    <!--        android:backgroundTintMode="add"-->
-    <!--        android:clickable="true"-->
-    <!--        android:clipChildren="true"-->
-    <!--        android:isScrollContainer="true"-->
-    <!--        android:keepScreenOn="true"-->
-    <!--        android:nestedScrollingEnabled="true"-->
-    <!--        android:scrollbars="horizontal"-->
-    <!--        android:splitMotionEvents="true"-->
-    <!--        app:autoWidthFixing="true"-->
-    <!--        app:carouselBackground="#3F51B5"-->
-    <!--        app:carouselGravity="START"-->
-    <!--        app:carouselPadding="10dp"-->
-    <!--        app:carouselPaddingBottom="10dp"-->
-    <!--        app:carouselPaddingEnd="5dp"-->
-    <!--        app:carouselPaddingStart="5dp"-->
-    <!--        app:carouselPaddingTop="5dp"-->
-    <!--        app:carouselType="BLOCK"-->
-    <!--        app:imageScaleType="fitCenter"-->
-    <!--        app:infiniteCarousel="false"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:scalingFactor="0.3"-->
-    <!--        app:showNavigationButtons="true" />-->
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/songLists"-->
-    <!--        android:layout_width="396dp"-->
-    <!--        android:layout_height="500dp"-->
-    <!--        android:layout_marginStart="8dp"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:overScrollMode="always"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/TopBarrier"
         android:layout_width="5dp"
@@ -279,5 +231,15 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_activity_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="391dp"
+        android:layout_height="77dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/mobile_navigation"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
